@@ -1,11 +1,34 @@
 /*
  *
- * particle argon feather
+ * Particle Aenon Feather
+ *
+ *                        .--------------------.
+ *                  Reset |16 0.18             |
+ *                        |15 3v3              |
+ *            (Button 1)  |14 0.11             |
+ *                        |13 0v               |
+ *                        |12 0.03     Vbat 12 | 
+ *                        |11 0.04     Pen  11 | 
+ *                        |10 0.28     Vusb 10 | 
+ *                        | 9 0.29     1.03  9 | 
+ *                        | 8 0.30     1.12  8 |  (Blue LED)
+ *                        | 7 0.31     1.11  7 | 
+ *                        | 6 1.15     1.10  6 | 
+ *                        | 5 1.13     1.08  5 | 
+ *                        | 4 1.14     1.02  4 | 
+ *             Uart Rx    | 3 0.08     1.01  3 | 
+ *             Uart Tx    | 2 0.06     0.27  2 | 
+ *                        | 1 nc       0.26  1 | 
+ *                        `--------------------'
  *
  */
 #ifndef io_board_H_
 #define io_board_H_
 #include <io_cpu.h>
+
+#define LED1_nrf_pin			def_nrf_io_output_pin(1,12,NRF_GPIO_ACTIVE_LEVEL_HIGH,GPIO_PIN_INACTIVE)
+#define LED1					((LED1_nrf_pin).io)
+
 
 #ifdef IMPLEMENT_IO_BOARD
 void
